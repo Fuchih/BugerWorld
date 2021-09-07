@@ -1,0 +1,597 @@
+@import "media";
+
+@font-face {
+  font-family: 'Kaushan Script';
+  src        : url(./fonts/kaushanscript-regular-webfont.woff);
+}
+
+$autoMargin: 0 auto;
+$font      : Helvetica,
+sans-serif;
+$fontKaushan: 'Kaushan Script',
+Helvetica;
+$primaryColor    :#5b250b;
+$secondaryColor  :#ef9310;
+$fontColor       :#aaa497;
+$backgroundColor :#f2f3ed;
+
+@mixin btn {
+  width           : 150px;
+  height          : 50px;
+  line-height     : 50px;
+  border-radius   : 50px;
+  border          : 0;
+  background-color: $fontColor;
+  color           : #fff;
+  cursor          : pointer;
+
+  &:active {
+    transform: scale(.97);
+  }
+
+  &:hover {
+    background-color: $secondaryColor;
+  }
+}
+
+@mixin triangle {
+  width       : 0;
+  height      : 0;
+  border-style: solid;
+  border-width: 0 0 300px 2500px;
+  border-color: transparent transparent $secondaryColor transparent;
+
+}
+
+@mixin triangle-reverse {
+  width       : 0;
+  height      : 0;
+  border-style: solid;
+  border-width: 300px 2500px 0 0;
+  border-color: $secondaryColor transparent transparent transparent;
+}
+
+html,
+body {
+  overflow-x      : hidden;
+  font-family     : $font;
+  background-color: $backgroundColor;
+}
+
+.wrap {
+  width : 70%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.bar-container {
+  z-index         : 999;
+  position        : fixed;
+  top             : 40px;
+  width           : 60px;
+  height          : 60px;
+  margin-left     : 10%;
+  border-radius   : 10px;
+  background-color: #fff;
+  cursor          : pointer;
+
+  .bar {
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    color    : $primaryColor;
+    transform: translate(-50%, -50%);
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      width           : 35px;
+      height          : 5px;
+      margin          : 3px 0;
+      background-color: $primaryColor;
+      transition      : .4s;
+    }
+
+    span {
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: $secondaryColor;
+    }
+
+    &:hover .bar1,
+    &:hover .bar2,
+    &:hover .bar3 {
+      background-color: $secondaryColor;
+    }
+  }
+}
+
+.change .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.body-container {
+  transition: all .3s ease;
+}
+
+// ---------- Nav ----------
+nav {
+  position        : fixed;
+  width           : 30%;
+  height          : 100%;
+  background-color: $primaryColor;
+  transform       : translateX(-200%);
+  transition      : all .3s ease;
+
+  ul {
+    margin: 300px 50px;
+
+    li {
+      margin-bottom: 100px;
+
+      a {
+        padding  : 50px;
+        color    : #fff;
+        font-size: 18px;
+
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+}
+
+// ---------- logo ----------
+header {
+  .logo-container {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+    width          : 200px;
+    height         : 200px;
+    margin         : $autoMargin;
+    margin-top     : 70px;
+
+    a {
+      color     : $primaryColor;
+      text-align: center;
+
+      h5 {
+        margin-top : -15px;
+        color      : $fontColor;
+        font-family: $fontKaushan;
+      }
+
+      img {
+        display: block;
+        width  : 65px;
+        margin : $autoMargin;
+      }
+    }
+  }
+}
+
+// ---------- Slider ----------
+.slider-container {
+  position: relative;
+
+  .triangle-top {
+    position: absolute;
+    top     : 0;
+    left    : 0;
+    z-index : 10;
+    @include triangle-reverse;
+    border-color: $backgroundColor transparent transparent transparent;
+  }
+
+  .triangle-bottom {
+    position: absolute;
+    bottom  : 0;
+    left    : 0;
+    z-index : 10;
+    @include triangle;
+    border-color: transparent transparent $backgroundColor transparent;
+  }
+}
+
+.slider {
+  position  : relative;
+  margin-top: -20px;
+
+  .swiper {
+    width                     : 100%;
+    height                    : 100%;
+    transition-timing-function: ease-out;
+
+    img {
+      width : 100%;
+      height: 30%;
+    }
+
+    .swiper-slide {
+      text-align      : center;
+      font-size       : 18px;
+      background      : #fff;
+      background-color: transparent;
+    }
+
+    .swiper-pagination {
+      margin-bottom: 400px;
+
+      .swiper-pagination-bullet {
+        width : 15px;
+        height: 15px;
+        border: 8px solid #fff;
+      }
+
+      .swiper-pagination-bullet-active {
+        background-color: $secondaryColor;
+      }
+
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      font-weight: 900;
+      color      : #fff;
+    }
+
+
+  }
+
+  .sec-slider {
+    position     : absolute;
+    top          : 50%;
+    left         : 50%;
+    z-index      : 1;
+    width        : 50vw;
+    border       : 5px solid #fff;
+    border-radius: 10px;
+    color        : #fff;
+    transform    : translate(-50%, -50%);
+
+    h4 {
+      font-family: $fontKaushan;
+    }
+  }
+}
+
+// ---------- Article ----------
+article {
+  display        : flex;
+  justify-content: center;
+  padding-top    : 70px;
+
+  .article-right {
+    h2 {
+      color    : $primaryColor;
+      font-size: 40px;
+    }
+
+    h4 {
+      color: $secondaryColor;
+      font : 30px $fontKaushan;
+    }
+
+    p {
+      line-height: 40px;
+      color      : $fontColor;
+      font-size  : 20px;
+    }
+
+    button {
+      @include btn;
+    }
+  }
+}
+
+// ---------- Main/Promotions ----------
+main {
+  .triangle {
+    @include triangle;
+  }
+
+  .promotions-container {
+    width           : 100%;
+    background-color: $secondaryColor;
+
+    .promo-top {
+
+      .promo-titles {
+        display    : flex;
+        align-items: center;
+
+        h1 {
+          flex       : 1;
+          color      : $primaryColor;
+          font-weight: 900;
+        }
+
+        button {
+          @include btn;
+          width           : 200px;
+          background-color: #fff;
+          color           : $fontColor;
+
+          &:hover {
+            background-color: $primaryColor;
+            color           : #fff;
+          }
+        }
+      }
+
+      h4 {
+        margin: 0;
+        color : #fff;
+        font  : 30px $fontKaushan;
+      }
+    }
+
+    .promo-items {
+      margin-top: 20px;
+
+      ul {
+        display        : flex;
+        justify-content: center;
+        flex-wrap      : wrap;
+        width          : 100%;
+        margin         : 0;
+        padding        : 0;
+
+        li {
+          position        : relative;
+          width           : 30%;
+          height          : 200px;
+          margin          : 10px;
+          border-radius   : 15px;
+          background-color: #f2f3ed;
+
+          a {
+            display: flex;
+            margin : 20px;
+
+            .promo-img {
+
+              img {
+                width: 90%;
+              }
+            }
+
+            .promo-product {
+              width     : 70%;
+              margin-top: -15px;
+
+              h3 {
+                color: $primaryColor;
+              }
+
+              p {
+                color: $fontColor;
+              }
+            }
+          }
+
+          @mixin circle {
+            position     : absolute;
+            width        : 0;
+            height       : 0;
+            border       : 5px solid $secondaryColor;
+            border-radius: 50%;
+          }
+
+          .circle-tr {
+            @include circle;
+            top  : 10px;
+            right: 10px;
+          }
+
+          .circle-br {
+            @include circle;
+            bottom: 10px;
+            right : 10px;
+          }
+
+          .circle-tl {
+            @include circle;
+            top : 10px;
+            left: 10px;
+          }
+
+          .circle-bl {
+            @include circle;
+            bottom: 10px;
+            left  : 10px;
+          }
+
+          .price-tag {
+            position: absolute;
+            bottom  : -60px;
+            right   : -200px;
+
+            .price {
+              position   : absolute;
+              top        : 30px;
+              left       : 15px;
+              color      : #fff;
+              font-weight: 700;
+              font-size  : 28px;
+              transform  : rotate(-10deg);
+            }
+
+            img {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .triangle-reverse {
+    @include triangle-reverse;
+  }
+}
+
+// ---------- Info ----------
+.board {
+  display: flex;
+
+  h3 {
+    color: $primaryColor;
+  }
+
+  h5 {
+    color: $secondaryColor;
+  }
+
+  p {
+    color: $fontColor;
+  }
+
+  ul {
+    display: flex;
+    padding: 0;
+
+    li {
+      flex   : 1;
+      padding: 30px 0;
+    }
+  }
+
+  .news {
+    position: relative;
+    flex: 2;
+  }
+
+  .job {
+    position: relative;
+    flex: 1;
+  }
+
+
+  button {
+    @include btn;
+    position: absolute;
+    bottom: -50px;
+  }
+}
+
+// ----------Footer ----------
+.footer-container {
+  padding-bottom: 60px;
+}
+
+footer {
+  background-color: #e6e7e0;
+  color           : $fontColor;
+
+  .triangle {
+    @include triangle-reverse();
+    border-color: $backgroundColor transparent transparent transparent;
+  }
+
+  .footer-top {
+    display        : flex;
+    justify-content: space-between;
+    margin         : 50px 0;
+
+    img {
+      vertical-align: bottom;
+      width         : 45px;
+    }
+
+    span:nth-child(n+2) {
+      display    : inline-block;
+      margin-left: 15px;
+    }
+
+    .email {
+      position: relative;
+
+      input {
+        width           : 500px;
+        height          : 50px;
+        padding-left    : 30px;
+        border          : 1px solid $fontColor;
+        border-radius   : 25px;
+        outline         : 0;
+        background-color: $backgroundColor;
+      }
+
+      button {
+        position        : absolute;
+        top             : 50%;
+        right           : 10px;
+        width           : 100px;
+        height          : 30px;
+        line-height     : 30px;
+        border-radius   : 50px;
+        border          : 0;
+        background-color: $fontColor;
+        color           : #fff;
+        transform       : translateY(-50%);
+        cursor          : pointer;
+
+        &:hover {
+          background-color: $secondaryColor;
+        }
+      }
+    }
+
+
+  }
+
+  .footer-bottom {
+    display        : flex;
+    justify-content: space-between;
+
+    @mixin media-icon {
+      display   : inline-block;
+      width     : 30px;
+      height    : 25px;
+      background: url(../img/icon/icon-social-media@2x.png) no-repeat;
+
+      &:hover {
+        background-position-y: -48px;
+      }
+    }
+
+    .facebook {
+      @include media-icon;
+      background-position: -14px -6px;
+    }
+
+    .twitter {
+      @include media-icon;
+      background-position: -50px -6px;
+    }
+
+    .google {
+      @include media-icon;
+      background-position: -86px -6px;
+    }
+
+    .pinterest {
+      @include media-icon;
+      background-position: -124px -6px;
+    }
+  }
+}

@@ -4,10 +4,114 @@
     margin: 0;
   }
 
+  // ---------- Nav ----------
+  nav {
+
+    ul {
+      margin : 150px 0 0 0;
+      padding: 0;
+
+      li {
+        margin-bottom: 100px;
+
+        a {
+          padding  : 15px;
+          color    : #fff;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+
+  // ---------- Slider ----------
+  .slider-container {
+    position     : relative;
+    margin-bottom: -80px;
+
+    .triangle-top {
+      border-width: 40px 400px 0 0;
+    }
+
+    .triangle-bottom {
+      border-width: 0 0 80px 800px;
+    }
+  }
+
+  .slider {
+    position  : relative;
+    margin-top: -20px;
+
+    .swiper {
+      width                     : 100%;
+      height                    : 100%;
+      transition-timing-function: ease-out;
+
+      img {
+        width : 100%;
+        height: 30%;
+      }
+
+      .swiper-slide {
+        text-align      : center;
+        font-size       : 18px;
+        background      : #fff;
+        background-color: transparent;
+      }
+
+      .swiper-pagination {
+        margin-bottom: 400px;
+
+        .swiper-pagination-bullet {
+          width : 15px;
+          height: 15px;
+          border: 8px solid #fff;
+        }
+
+        .swiper-pagination-bullet-active {
+          background-color: $secondaryColor;
+        }
+
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        font-weight: 900;
+        color      : #fff;
+      }
+
+
+    }
+
+    .sec-slider {
+      width : 50vw;
+      height: 50vw;
+
+      .slider-text {
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
+        align-items    : center;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      h4 {
+        font-size  : 12px;
+        font-family: $fontKaushan;
+      }
+    }
+  }
+
+  // ---------- Article ----------
   article {
     flex-direction: column;
     align-items   : center;
-    margin-top    : 0;
 
     .article-right {
       width       : 90%;
@@ -17,6 +121,107 @@
     img {
       width : 90%;
       margin: 20px;
+    }
+  }
+
+  // ---------- Main/Promotions ----------
+  main {
+    .triangle {
+      @include triangle;
+      margin-top: -250px;
+    }
+
+    .promotions-container {
+      .promo-top {
+        .promo-titles {
+          flex-wrap  : wrap;
+          margin-left: 20px;
+        }
+
+        h4 {
+          margin-left: 20px;
+        }
+      }
+
+      .promo-items {
+        ul {
+          li {
+            width : 100%;
+            margin: 30px 10px;
+          }
+        }
+      }
+    }
+
+    .triangle-reverse {
+      @include triangle-reverse;
+      margin-top   : -200px;
+      margin-bottom: 30px;
+    }
+  }
+
+  // ---------- Info ----------
+  .board {
+    flex-direction: column;
+
+    ul {
+      flex-direction: column;
+
+      li {
+        padding: 10px 0;
+      }
+    }
+
+    .news {
+      margin-left: 20px;
+    }
+
+    .job {
+      margin: 80px 0 0 20px
+    }
+  }
+
+  // ----------Footer ----------
+  footer {
+    .triangle {
+      margin-top: -150px;
+    }
+
+    .footer-top {
+      flex-direction: column;
+
+      img {
+        margin-left: 20px;
+      }
+
+      span:nth-child(n+2) {
+        display    : block;
+        margin-top : 20px;
+        margin-left: 20px;
+        font-size  : 14px;
+      }
+
+      .email {
+        margin-bottom: 30px;
+
+        input {
+          right: 5px;
+          width: 90%;
+        }
+
+        button {
+          top: 25px;
+        }
+      }
+
+      .footer-bottom {
+        display        : flex;
+        justify-content: space-between;
+
+        @mixin media-icon {
+          display: inline-block;
+        }
+      }
     }
   }
 }

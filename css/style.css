@@ -1,55 +1,3 @@
-@media (max-width: 575.98px) {
-  .wrap {
-    width : 100%;
-    margin: 0;
-  }
-
-  article {
-    -webkit-box-orient   : vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction   : column;
-    flex-direction       : column;
-    -webkit-box-align    : center;
-    -ms-flex-align       : center;
-    align-items          : center;
-    margin-top           : 0;
-  }
-
-  article .article-right {
-    width       : 90%;
-    margin-right: 0;
-  }
-
-  article img {
-    width : 90%;
-    margin: 20px;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 768px) {
-  article {
-    margin: 10px 100px;
-  }
-
-  article .article-right {
-    -webkit-box-flex: 2;
-    -ms-flex        : 2;
-    flex            : 2;
-    margin-right    : 0;
-  }
-
-  article .article-left {
-    -webkit-box-flex: 1;
-    -ms-flex        : 1;
-    flex            : 1;
-  }
-
-  article .article-left img {
-    width     : 100%;
-    margin-top: 50px;
-  }
-}
-
 @font-face {
   font-family: 'Kaushan Script';
   src        : url(./fonts/kaushanscript-regular-webfont.woff);
@@ -142,6 +90,7 @@ ul {
 
 nav {
   position          : fixed;
+  z-index           : 20;
   width             : 30%;
   height            : 100%;
   background-color  : #5b250b;
@@ -222,7 +171,7 @@ header .logo-container a img {
 .slider-container .triangle-bottom {
   position    : absolute;
   bottom      : 0;
-  left        : 0;
+  left        : -50px;
   z-index     : 10;
   width       : 0;
   height      : 0;
@@ -634,6 +583,9 @@ footer .footer-top .email {
 }
 
 footer .footer-top .email input {
+  position        : absolute;
+  top             : 0;
+  right           : 0;
   width           : 500px;
   height          : 50px;
   padding-left    : 30px;
@@ -645,7 +597,7 @@ footer .footer-top .email input {
 
 footer .footer-top .email button {
   position         : absolute;
-  top              : 50%;
+  top              : 70%;
   right            : 10px;
   width            : 100px;
   height           : 30px;
@@ -718,6 +670,267 @@ footer .footer-bottom .pinterest {
 
 footer .footer-bottom .pinterest:hover {
   background-position-y: -48px;
+}
+
+@media (max-width: 575.98px) {
+  .wrap {
+    width : 100%;
+    margin: 0;
+  }
+
+  nav ul {
+    margin : 150px 0 0 0;
+    padding: 0;
+  }
+
+  nav ul li {
+    margin-bottom: 100px;
+  }
+
+  nav ul li a {
+    padding  : 15px;
+    color    : #fff;
+    font-size: 16px;
+  }
+
+  .slider-container {
+    position     : relative;
+    margin-bottom: -80px;
+  }
+
+  .slider-container .triangle-top {
+    border-width: 40px 400px 0 0;
+  }
+
+  .slider-container .triangle-bottom {
+    border-width: 0 0 80px 800px;
+  }
+
+  .slider {
+    position  : relative;
+    margin-top: -20px;
+  }
+
+  .slider .swiper {
+    width                             : 100%;
+    height                            : 100%;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function        : ease-out;
+  }
+
+  .slider .swiper img {
+    width : 100%;
+    height: 30%;
+  }
+
+  .slider .swiper .swiper-slide {
+    text-align      : center;
+    font-size       : 18px;
+    background      : #fff;
+    background-color: transparent;
+  }
+
+  .slider .swiper .swiper-pagination {
+    margin-bottom: 400px;
+  }
+
+  .slider .swiper .swiper-pagination .swiper-pagination-bullet {
+    width : 15px;
+    height: 15px;
+    border: 8px solid #fff;
+  }
+
+  .slider .swiper .swiper-pagination .swiper-pagination-bullet-active {
+    background-color: #ef9310;
+  }
+
+  .slider .swiper .swiper-button-next,
+  .slider .swiper .swiper-button-prev {
+    font-weight: 900;
+    color      : #fff;
+  }
+
+  .slider .sec-slider {
+    width : 50vw;
+    height: 50vw;
+  }
+
+  .slider .sec-slider .slider-text {
+    display              : -webkit-box;
+    display              : -ms-flexbox;
+    display              : flex;
+    -webkit-box-orient   : vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction   : column;
+    flex-direction       : column;
+    -webkit-box-pack     : center;
+    -ms-flex-pack        : center;
+    justify-content      : center;
+    -webkit-box-align    : center;
+    -ms-flex-align       : center;
+    align-items          : center;
+  }
+
+  .slider .sec-slider h2 {
+    font-size: 18px;
+  }
+
+  .slider .sec-slider h3 {
+    font-size: 16px;
+  }
+
+  .slider .sec-slider h4 {
+    font-size  : 12px;
+    font-family: "Kaushan Script", Helvetica;
+  }
+
+  article {
+    -webkit-box-orient   : vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction   : column;
+    flex-direction       : column;
+    -webkit-box-align    : center;
+    -ms-flex-align       : center;
+    align-items          : center;
+  }
+
+  article .article-right {
+    width       : 90%;
+    margin-right: 0;
+  }
+
+  article img {
+    width : 90%;
+    margin: 20px;
+  }
+
+  main .triangle {
+    width       : 0;
+    height      : 0;
+    border-style: solid;
+    border-width: 0 0 300px 2500px;
+    border-color: transparent transparent #ef9310 transparent;
+    margin-top  : -250px;
+  }
+
+  main .promotions-container .promo-top .promo-titles {
+    -ms-flex-wrap: wrap;
+    flex-wrap    : wrap;
+    margin-left  : 20px;
+  }
+
+  main .promotions-container .promo-top h4 {
+    margin-left: 20px;
+  }
+
+  main .promotions-container .promo-items ul li {
+    width : 100%;
+    margin: 30px 10px;
+  }
+
+  main .triangle-reverse {
+    width        : 0;
+    height       : 0;
+    border-style : solid;
+    border-width : 300px 2500px 0 0;
+    border-color : #ef9310 transparent transparent transparent;
+    margin-top   : -200px;
+    margin-bottom: 30px;
+  }
+
+  .board {
+    -webkit-box-orient   : vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction   : column;
+    flex-direction       : column;
+  }
+
+  .board ul {
+    -webkit-box-orient   : vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction   : column;
+    flex-direction       : column;
+  }
+
+  .board ul li {
+    padding: 10px 0;
+  }
+
+  .board .news {
+    margin-left: 20px;
+  }
+
+  .board .job {
+    margin: 80px 0 0 20px;
+  }
+
+  footer .triangle {
+    margin-top: -150px;
+  }
+
+  footer .footer-top {
+    -webkit-box-orient   : vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction   : column;
+    flex-direction       : column;
+  }
+
+  footer .footer-top img {
+    margin-left: 20px;
+  }
+
+  footer .footer-top span:nth-child(n+2) {
+    display    : block;
+    margin-top : 20px;
+    margin-left: 20px;
+    font-size  : 14px;
+  }
+
+  footer .footer-top .email {
+    margin-bottom: 30px;
+  }
+
+  footer .footer-top .email input {
+    right: 5px;
+    width: 90%;
+  }
+
+  footer .footer-top .email button {
+    top: 25px;
+  }
+
+  footer .footer-top .footer-bottom {
+    display         : -webkit-box;
+    display         : -ms-flexbox;
+    display         : flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack   : justify;
+    justify-content : space-between;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  article {
+    margin: 10px 100px;
+  }
+
+  article .article-right {
+    -webkit-box-flex: 2;
+    -ms-flex        : 2;
+    flex            : 2;
+    margin-right    : 0;
+  }
+
+  article .article-left {
+    -webkit-box-flex: 1;
+    -ms-flex        : 1;
+    flex            : 1;
+  }
+
+  article .article-left img {
+    width     : 100%;
+    margin-top: 50px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

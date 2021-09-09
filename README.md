@@ -1,3 +1,3 @@
 # BurgerWorld
 
-DEMO : https://fuchih.github.io/BugerWorld/
+DEMO : https://fuchih.github.io/BurgerWorld/

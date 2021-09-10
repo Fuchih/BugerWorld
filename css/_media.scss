@@ -4,6 +4,43 @@
     margin: 0;
   }
 
+  // ---------- Login --------
+  .login-container {
+    width: 300px;
+
+    p {
+      margin-top: 10px;
+
+      a {
+        padding: 10px
+      }
+    }
+
+    #facebook-btn {
+
+      @include btn;
+      display         : inline-block;
+      margin-bottom   : 7px;
+      background-color: #4267b2;
+
+      &:hover {
+        background-color: #4267b2;
+      }
+    }
+
+    #google-btn {
+      @include btn;
+      display         : inline-block;
+      background-color: #fff;
+      color           : #000;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+
+  }
+
   // ---------- Nav ----------
   nav {
 

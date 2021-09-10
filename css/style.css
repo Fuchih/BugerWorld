@@ -24,7 +24,7 @@ ul {
 }
 
 .bar-container {
-  z-index         : 999;
+  z-index         : 100;
   position        : fixed;
   top             : 40px;
   width           : 60px;
@@ -116,6 +116,207 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #ef9310;
+}
+
+.login-btn {
+  position: absolute;
+  top     : 45px;
+  right   : 10%;
+  width   : 50px;
+  height  : 80px;
+  cursor  : pointer;
+}
+
+.login-btn img {
+  width : 45px;
+  height: 45px;
+}
+
+.login-btn h4 {
+  margin: 0;
+  color : #5b250b;
+}
+
+.login-container {
+  display          : none;
+  position         : fixed;
+  top              : 30%;
+  left             : 50%;
+  z-index          : 300;
+  width            : 380px;
+  height           : 520px;
+  margin           : 100px auto;
+  border-radius    : 10px;
+  background-color : #ef9310;
+  text-align       : center;
+  color            : #fff;
+  -webkit-transform: translate(-50%, -50%);
+  transform        : translate(-50%, -50%);
+}
+
+.login-container .close {
+  position: absolute;
+  top     : 10px;
+  right   : 10px;
+  width   : 50px;
+  height  : 50px;
+  cursor  : pointer;
+}
+
+.login-container .close img {
+  width: 100%;
+}
+
+.login-container h1 {
+  margin    : 0;
+  padding   : 50px 0 0 0;
+  text-align: center;
+}
+
+.login-container .form-control {
+  position  : relative;
+  text-align: center;
+}
+
+.login-container .form-control input {
+  width           : 80%;
+  margin-top      : 25px;
+  padding         : 10px 0;
+  border          : 0;
+  border-bottom   : 3px solid #fff;
+  outline         : none;
+  background-color: transparent;
+  color           : #fff;
+  font-size       : 24px;
+}
+
+.login-container .form-control label {
+  position: absolute;
+  top     : 40px;
+  left    : 10%;
+}
+
+.login-container .form-control label span {
+  display           : inline-block;
+  -webkit-transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition        : 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.login-container .form-control input:focus+label span,
+.login-container .form-control input:valid+label span {
+  color            : #5b250b;
+  -webkit-transform: translateY(-30px);
+  transform        : translateY(-30px);
+}
+
+.login-container #login-btn {
+  width        : 80%;
+  height       : 50px;
+  margin-top   : 25px;
+  border       : 0;
+  border-radius: 8px;
+  color        : #5b250b;
+  font-size    : 20px;
+  font-weight  : 700;
+}
+
+.login-container #login-btn:active {
+  -webkit-transform: scale(0.97);
+  transform        : scale(0.97);
+}
+
+.login-container p {
+  margin-top: 50px;
+}
+
+.login-container p a {
+  padding        : 20px;
+  text-decoration: none;
+  color          : #5b250b;
+}
+
+.login-container p a:hover {
+  color: #f2f3ed;
+}
+
+.login-container h4 {
+  font-size: 18px;
+}
+
+.login-container #facebook-btn {
+  width           : 150px;
+  height          : 50px;
+  line-height     : 50px;
+  border-radius   : 50px;
+  border          : 0;
+  background-color: #aaa497;
+  color           : #fff;
+  cursor          : pointer;
+  display         : inline-block;
+  background-color: #4267b2;
+}
+
+.login-container #facebook-btn:active {
+  -webkit-transform: scale(0.97);
+  transform        : scale(0.97);
+}
+
+.login-container #facebook-btn:hover {
+  background-color: #ef9310;
+}
+
+.login-container #facebook-btn:hover {
+  background-color: #4267b2;
+}
+
+.login-container #facebook-btn img {
+  vertical-align: middle;
+  width         : 30px;
+  height        : 30px;
+  margin-top    : -5px;
+}
+
+.login-container #google-btn {
+  width           : 150px;
+  height          : 50px;
+  line-height     : 50px;
+  border-radius   : 50px;
+  border          : 0;
+  background-color: #aaa497;
+  color           : #fff;
+  cursor          : pointer;
+  display         : inline-block;
+  background-color: #fff;
+  color           : #000;
+}
+
+.login-container #google-btn:active {
+  -webkit-transform: scale(0.97);
+  transform        : scale(0.97);
+}
+
+.login-container #google-btn:hover {
+  background-color: #ef9310;
+}
+
+.login-container #google-btn:hover {
+  background-color: #fff;
+}
+
+.login-container #google-btn img {
+  vertical-align: middle;
+  margin        : -5px 5px 0 0;
+}
+
+.mask {
+  display         : none;
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  z-index         : 200;
+  width           : 100%;
+  height          : 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 header .logo-container {
@@ -676,6 +877,72 @@ footer .footer-bottom .pinterest:hover {
   .wrap {
     width : 100%;
     margin: 0;
+  }
+
+  .login-container {
+    width: 300px;
+  }
+
+  .login-container p {
+    margin-top: 10px;
+  }
+
+  .login-container p a {
+    padding: 10px;
+  }
+
+  .login-container #facebook-btn {
+    width           : 150px;
+    height          : 50px;
+    line-height     : 50px;
+    border-radius   : 50px;
+    border          : 0;
+    background-color: #aaa497;
+    color           : #fff;
+    cursor          : pointer;
+    display         : inline-block;
+    margin-bottom   : 7px;
+    background-color: #4267b2;
+  }
+
+  .login-container #facebook-btn:active {
+    -webkit-transform: scale(0.97);
+    transform        : scale(0.97);
+  }
+
+  .login-container #facebook-btn:hover {
+    background-color: #ef9310;
+  }
+
+  .login-container #facebook-btn:hover {
+    background-color: #4267b2;
+  }
+
+  .login-container #google-btn {
+    width           : 150px;
+    height          : 50px;
+    line-height     : 50px;
+    border-radius   : 50px;
+    border          : 0;
+    background-color: #aaa497;
+    color           : #fff;
+    cursor          : pointer;
+    display         : inline-block;
+    background-color: #fff;
+    color           : #000;
+  }
+
+  .login-container #google-btn:active {
+    -webkit-transform: scale(0.97);
+    transform        : scale(0.97);
+  }
+
+  .login-container #google-btn:hover {
+    background-color: #ef9310;
+  }
+
+  .login-container #google-btn:hover {
+    background-color: #fff;
   }
 
   nav ul {

@@ -69,8 +69,9 @@ ul {
   list-style: none;
 }
 
+// ---------- Menu Btn ----------
 .bar-container {
-  z-index         : 999;
+  z-index         : 100;
   position        : fixed;
   top             : 40px;
   width           : 60px;
@@ -156,6 +157,174 @@ nav {
       }
     }
   }
+}
+
+// ---------- Login ---------
+.login-btn {
+  position: absolute;
+  top     : 45px;
+  right   : 10%;
+  width   : 50px;
+  height  : 80px;
+  cursor  : pointer;
+
+  img {
+    width : 45px;
+    height: 45px;
+  }
+
+  h4 {
+    margin: 0;
+    color : $primaryColor;
+  }
+}
+
+
+.login-container {
+  display         : none;
+  position        : fixed;
+  top             : 30%;
+  left            : 50%;
+  z-index         : 300;
+  width           : 380px;
+  height          : 520px;
+  margin          : 100px auto;
+  border-radius   : 10px;
+  background-color: $secondaryColor;
+  text-align      : center;
+  color           : #fff;
+  transform       : translate(-50%, -50%);
+
+  .close {
+    position: absolute;
+    top     : 10px;
+    right   : 10px;
+    width   : 50px;
+    height  : 50px;
+    cursor  : pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h1 {
+    margin    : 0;
+    padding   : 50px 0 0 0;
+    text-align: center;
+  }
+
+  .form-control {
+    position  : relative;
+    text-align: center;
+
+    input {
+      width           : 80%;
+      margin-top      : 25px;
+      padding         : 10px 0;
+      border          : 0;
+      border-bottom   : 3px solid #fff;
+      outline         : none;
+      background-color: transparent;
+      color           : #fff;
+      font-size       : 24px;
+    }
+
+    label {
+      position: absolute;
+      top     : 40px;
+      left    : 10%;
+
+      span {
+        display   : inline-block;
+        transition: .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+    }
+  }
+
+  .form-control input:focus+label span,
+  .form-control input:valid+label span {
+    color    : $primaryColor;
+    transform: translateY(-30px);
+  }
+
+  #login-btn {
+    width        : 80%;
+    height       : 50px;
+    margin-top   : 25px;
+    border       : 0;
+    border-radius: 8px;
+    color        : $primaryColor;
+    font-size    : 20px;
+    font-weight  : 700;
+
+    &:active {
+      transform: scale(.97);
+    }
+  }
+
+  p {
+    margin-top: 50px;
+
+    a {
+      padding        : 20px;
+      text-decoration: none;
+      color          : $primaryColor;
+
+      &:hover {
+        color: $backgroundColor;
+      }
+    }
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  #facebook-btn {
+    @include btn;
+    display         : inline-block;
+    background-color: #4267b2;
+
+    &:hover {
+      background-color: #4267b2;
+    }
+
+    img {
+      vertical-align: middle;
+      width         : 30px;
+      height        : 30px;
+      margin-top    : -5px;
+
+    }
+  }
+
+  #google-btn {
+    @include btn;
+    display         : inline-block;
+    background-color: #fff;
+    color           : #000;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    img {
+      vertical-align: middle;
+      margin        : -5px 5px 0 0;
+    }
+  }
+}
+
+.mask {
+  display         : none;
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  z-index         : 200;
+  width           : 100%;
+  height          : 100%;
+  background-color: rgba(0, 0, 0, .7);
 }
 
 // ---------- logo ----------

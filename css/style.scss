@@ -384,7 +384,7 @@ header {
   position  : relative;
   margin-top: -20px;
 
-  .swiper {
+  @at-root .swiper {
     width                     : 100%;
     height                    : 100%;
     transition-timing-function: ease-out;
@@ -477,7 +477,7 @@ main {
     @include triangle;
   }
 
-  .promotions-container {
+  @at-root .promotions-container {
     width           : 100%;
     background-color: $secondaryColor;
 
@@ -513,7 +513,7 @@ main {
       }
     }
 
-    .promo-items {
+    @at-root .promo-items {
       margin-top: 20px;
 
       ul {
@@ -543,7 +543,7 @@ main {
               }
             }
 
-            .promo-product {
+            @at-root .promo-product {
               width     : 70%;
               margin-top: -15px;
 
@@ -589,7 +589,7 @@ main {
             left  : 10px;
           }
 
-          .price-tag {
+          @at-root .price-tag {
             position: absolute;
             bottom  : -60px;
             right   : -200px;
@@ -676,7 +676,7 @@ footer {
     border-color: $backgroundColor transparent transparent transparent;
   }
 
-  .footer-top {
+  @at-root .footer-top {
     display        : flex;
     justify-content: space-between;
     margin         : 50px 0;
@@ -698,7 +698,7 @@ footer {
         position        : absolute;
         top             : 0;
         right           : 0;
-        width           : 500px;
+        width           : 35vw;
         height          : 50px;
         padding-left    : 30px;
         border          : 1px solid $fontColor;
@@ -730,7 +730,7 @@ footer {
 
   }
 
-  .footer-bottom {
+  @at-root .footer-bottom {
     display        : flex;
     justify-content: space-between;
 

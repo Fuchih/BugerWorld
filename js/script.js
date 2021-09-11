@@ -38,6 +38,28 @@ fbLogin.onclick = function () {
     }
   })
 }
+//Google login API ---------------
+const googleLogin = document.querySelector('#google-btn')
+
+const startApp = function () {
+  gapi.load('auth2', function () {
+    auth2 = gapi.auth2.init({
+      client_id: '132846187738-rac0vjasgm3nihp7lf51i4sr8qidv4ed.apps.googleusercontent.com',
+      cookiepolicy: 'single_host_origin'
+    })
+    attachSignin(googleLogin)
+  })
+}
+
+function attachSignin(element) {
+  auth2.attachClickHandler(element, {})
+}
+
+startApp()
+
+googleLogin.onclick = () => {
+  startApp()
+}
 
 // navigation Bar transform ----------------------
 const bar = document.querySelector('.bar-container')

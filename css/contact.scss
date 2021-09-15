@@ -1,0 +1,183 @@
+@import "common";
+
+.contact-title {
+  margin-bottom: 30px;
+
+  h1 {
+    color: $primaryColor;
+
+    font: {
+      weight: 900;
+      size  : 36px;
+    }
+  }
+
+  h4 {
+    color: $secondaryColor;
+
+    font: {
+      size  : 24px;
+      family: $fontKaushan;
+    }
+  }
+
+  p {
+    color      : $fontColor;
+    line-height: 30px;
+  }
+}
+
+.form-area {
+  display  : flex;
+  flex-wrap: wrap;
+
+  @at-root .contact-info {
+    position        : relative;
+    width           : 300px;
+    height          : 300px;
+    border-radius   : 20px;
+    background-color: #e6e7e0;
+
+
+    @at-root .info {
+      position  : absolute;
+      top       : 50%;
+      left      : 50%;
+      color     : $fontColor;
+      text-align: center;
+      transform : translate(-50%, -50%);
+
+      .info-top,
+      .info-bottom {
+        line-height: 2;
+      }
+
+      .info-top {
+        margin-bottom: 30px;
+      }
+    }
+
+    @mixin circle {
+      position     : absolute;
+      width        : 0;
+      height       : 0;
+      border       : 5px solid #cacbc1;
+      border-radius: 50%;
+    }
+
+    .circle-tr {
+      @include circle;
+      top  : 10px;
+      right: 10px;
+    }
+
+    .circle-br {
+      @include circle;
+      bottom: 10px;
+      right : 10px;
+    }
+
+    .circle-tl {
+      @include circle;
+      top : 10px;
+      left: 10px;
+    }
+
+    .circle-bl {
+      @include circle;
+      bottom: 10px;
+      left  : 10px;
+    }
+
+
+
+  }
+
+  @at-root .input-control {
+    flex           : 1;
+    display        : flex;
+    flex-direction : column;
+    justify-content: space-between;
+    margin         : 0 10px;
+  }
+
+  @mixin padding {
+    padding: 20px 20px 20px 50px;
+  }
+
+  input {
+    @include padding;
+    height       : 10px;
+    border       : 3px solid $fontColor;
+    border-radius: 20px;
+    outline      : none;
+  }
+
+  @at-root .textarea {
+    @include padding;
+    flex         : 1;
+    border       : 3px solid $fontColor;
+    border-radius: 20px;
+    outline      : none;
+    resize       : none
+  }
+}
+
+#msg {
+  @include btn;
+  float     : right;
+  margin-top: 20px;
+}
+
+@media (max-width: 576px) {
+  .contact-title {
+    text-align: center;
+  }
+
+  .form-area {
+    flex-direction: column;
+
+    .contact-info {
+      margin: 0 auto;
+    }
+  }
+
+  .input-control input {
+    width : 200px;
+    margin: 10px auto 10px auto;
+  }
+
+  .textarea {
+    width : 200px;
+    margin: 0 auto;
+  }
+
+  #msg {
+    position: relative;
+    left    : -25%;
+  }
+}
+
+@media(min-width: 576.1px) and (max-width: 768px) {
+  main {
+    margin-bottom: 30px;
+  }
+
+  .contact-info,
+  .input-control {
+    width        : 50%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 768.1px) and (max-width: 1023.9px) {
+  main {
+    margin-bottom: 30px;
+  }
+
+  .contact-info,
+  .input-control {
+    flex         : 1;
+    margin-bottom: 20px;
+  }
+}

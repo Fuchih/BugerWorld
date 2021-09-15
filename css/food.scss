@@ -1,0 +1,135 @@
+@import "common";
+
+.food-title {
+  margin-bottom: 30px;
+
+  h1 {
+    color: $primaryColor;
+
+    font: {
+      weight: 900;
+      size  : 36px;
+    }
+  }
+
+  h4 {
+    color: $secondaryColor;
+
+    font: {
+      size  : 24px;
+      family: $fontKaushan;
+    }
+  }
+
+  p {
+    color      : $fontColor;
+    line-height: 30px;
+  }
+}
+
+.filter-container {
+  display        : flex;
+  justify-content: center;
+  text-align     : center;
+  margin-bottom  : 30px;
+}
+
+#all,
+#burgers,
+#sandwiches,
+#bundle {
+  @include btn;
+  margin: 20px;
+}
+
+.active {
+  background-Color: $secondaryColor !important;
+}
+
+
+.foods {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-wrap      : wrap;
+  padding        : 0;
+
+  @at-root .food {
+    margin-bottom: 30px;
+    text-align   : center;
+
+    >img {
+      width: 100%;
+    }
+
+    @at-root .food-name {
+      color: $primaryColor;
+    }
+
+    @at-root .food-price {
+      margin-right: 10px;
+      color       : $secondaryColor;
+
+      font: {
+        size  : 24px;
+        family: $fontKaushan;
+      }
+    }
+
+    @at-root .cart {
+      vertical-align: bottom;
+      width         : 30px;
+      height        : 30px;
+      cursor        : pointer;
+
+      &:active {
+        transform: scale(.9);
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .food-title {
+    width      : 90%;
+    margin-left: 10px;
+  }
+
+  .filter-container {
+    display  : flex;
+    flex-wrap: wrap;
+  }
+
+  #all,
+  #burgers,
+  #sandwiches,
+  #bundle {
+    margin: 5px;
+  }
+
+  #all,
+  #bundle {
+    flex: 1;
+  }
+
+  #burgers,
+  #sandwiches {
+    width: 50%;
+  }
+
+  .food {
+    width: 40%;
+  }
+}
+
+@media(min-width: 576.1px) and (max-width: 768px) {
+  .food {
+    width: 30%;
+  }
+}
+
+@media (min-width: 768.1px) {
+  .food {
+    width: 25%;
+  }
+}

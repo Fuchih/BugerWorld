@@ -1,64 +1,4 @@
 @media (max-width: 576px) {
-  .wrap {
-    width : 100%;
-    margin: 0;
-  }
-
-  // ---------- Login --------
-  .login-container {
-    width: 300px;
-
-    p {
-      margin-top: 10px;
-
-      a {
-        padding: 10px
-      }
-    }
-
-    #facebook-btn {
-
-      @include btn;
-      display         : inline-block;
-      margin-bottom   : 7px;
-      background-color: #4267b2;
-
-      &:hover {
-        background-color: #4267b2;
-      }
-    }
-
-    #google-btn {
-      @include btn;
-      display         : inline-block;
-      background-color: #fff;
-      color           : #000;
-
-      &:hover {
-        background-color: #fff;
-      }
-    }
-
-  }
-
-  // ---------- Nav ----------
-  nav {
-
-    ul {
-      margin : 150px 0 0 0;
-      padding: 0;
-
-      li {
-        margin-bottom: 100px;
-
-        a {
-          padding  : 15px;
-          color    : #fff;
-          font-size: 16px;
-        }
-      }
-    }
-  }
 
   // ---------- Slider ----------
   .slider-container {
@@ -88,8 +28,6 @@
       font-size: 12px;
     }
   }
-
-
 
   // ---------- Article ----------
   article {
@@ -179,70 +117,10 @@
     }
   }
 
-  // ----------Footer ----------
-  footer {
-    .triangle {
-      margin-top: -150px;
-    }
 
-    .footer-top {
-      flex-direction: column;
-
-      img {
-        margin-left: 20px;
-      }
-
-      span:nth-child(2) {
-        margin-top : 20px;
-        margin-left: 40px;
-        font-size  : 14px;
-      }
-
-      span:nth-child(3) {
-        @extend span:nth-child(2);
-        margin-left : 110px;
-
-      }
-
-      .email {
-        margin-bottom: 30px;
-
-        input {
-          right: 18px;
-          width: 90%;
-        }
-
-        button {
-          top  : 27px;
-          right: 28px;
-        }
-      }
-    }
-
-    .footer-bottom {
-      flex-direction: column;
-      align-items   : center;
-
-      span {
-        margin-bottom: 20px;
-      }
-    }
-  }
 }
 
 @media(min-width: 576.1px) and (max-width: 768px) {
-  .wrap {
-    width : 85%;
-    margin: 0 auto;
-  }
-
-  // ---------- Nav ----------
-  nav {
-    ul {
-      margin : 150px 0 0 25px;
-      padding: 0;
-    }
-  }
 
   // ---------- Slider ----------
   .slider-container {
@@ -305,39 +183,9 @@
       margin-bottom: 30px;
     }
   }
-
-  // ----------Footer ----------
-  footer {
-    .triangle {
-      margin-top: -150px;
-    }
-
-    .footer-top {
-      flex-direction: column;
-
-      .email {
-        margin-bottom: 30px;
-
-        input {
-          top  : 15px;
-          right: 50px;
-          width: 90%;
-        }
-
-        button {
-          top  : 43px;
-          right: 70px;
-        }
-      }
-    }
-  }
 }
 
 @media (min-width: 768.1px) and (max-width: 1024px) {
-  .wrap {
-    width : 90%;
-    margin: 0 auto;
-  }
 
   // ---------- Nav ----------
   nav {
@@ -363,7 +211,6 @@
       border-width: 0 0 150px 1500px;
     }
   }
-
 
   // ---------- Main/Promotions ----------
   main {
@@ -391,28 +238,9 @@
       margin-bottom: 30px;
     }
   }
-
-  // ----------Footer ----------
-  footer {
-    .triangle {
-      margin-top: -100px;
-    }
-  }
 }
 
 @media (min-width: 1024.1px) and (max-width: 1200px) {
-  .wrap {
-    width : 90%;
-    margin: 0 auto;
-  }
-
-  // ---------- Nav ----------
-  nav {
-    ul {
-      margin : 150px 0 0 25px;
-      padding: 0;
-    }
-  }
 
   // ---------- Slider ----------
   .slider-container {

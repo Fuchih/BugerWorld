@@ -1,0 +1,705 @@
+@font-face {
+  font-family: 'Kaushan Script';
+  src        : url(./fonts/kaushanscript-regular-webfont.woff);
+}
+
+$autoMargin: 0 auto;
+$font      : Helvetica,
+sans-serif;
+$fontKaushan: 'Kaushan Script',
+Helvetica;
+$primaryColor    :#5b250b;
+$secondaryColor  :#ef9310;
+$fontColor       :#aaa497;
+$backgroundColor :#f2f3ed;
+
+@mixin btn {
+  width           : 150px;
+  height          : 50px;
+  line-height     : 50px;
+  border-radius   : 50px;
+  border          : 0;
+  background-color: $fontColor;
+  color           : #fff;
+  cursor          : pointer;
+
+  &:active {
+    transform: scale(.97);
+  }
+
+  &:hover {
+    background-color: $secondaryColor;
+  }
+}
+
+@mixin triangle {
+  width       : 0;
+  height      : 0;
+  border-style: solid;
+  border-width: 0 0 300px 2500px;
+  border-color: transparent transparent $secondaryColor transparent;
+
+}
+
+@mixin triangle-reverse {
+  width       : 0;
+  height      : 0;
+  border-style: solid;
+  border-width: 300px 2500px 0 0;
+  border-color: $secondaryColor transparent transparent transparent;
+}
+
+html,
+body {
+  overflow-x      : hidden;
+  font-family     : $font;
+  background-color: $backgroundColor;
+}
+
+.wrap {
+  width : 70%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+
+// ---------- Menu Btn ----------
+.bar-container {
+  z-index         : 100;
+  position        : fixed;
+  top             : 40px;
+  width           : 60px;
+  height          : 60px;
+  margin-left     : 10%;
+  border-radius   : 10px;
+  background-color: #fff;
+  cursor          : pointer;
+
+  .bar {
+    position : absolute;
+    top      : 50%;
+    left     : 50%;
+    color    : $primaryColor;
+    transform: translate(-50%, -50%);
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      width           : 35px;
+      height          : 5px;
+      margin          : 3px 0;
+      background-color: $primaryColor;
+      transition      : .4s;
+    }
+
+    span {
+      font-size: 14px;
+    }
+
+    &:hover {
+      color: $secondaryColor;
+    }
+
+    &:hover .bar1,
+    &:hover .bar2,
+    &:hover .bar3 {
+      background-color: $secondaryColor;
+    }
+  }
+}
+
+.change .bar1 {
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .bar2 {
+  opacity: 0;
+}
+
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -6px);
+}
+
+.body-container {
+  transition: all .3s ease;
+}
+
+// ---------- Nav ----------
+nav {
+  position        : fixed;
+  z-index         : 20;
+  width           : 30%;
+  height          : 100%;
+  background-color: $primaryColor;
+  transform       : translateX(-200%);
+  transition      : all .3s ease;
+
+  ul {
+    margin: 300px 50px;
+
+    li {
+      margin-bottom: 100px;
+
+      a {
+        padding  : 50px;
+        color    : #fff;
+        font-size: 18px;
+
+        &:hover {
+          color: $secondaryColor;
+        }
+      }
+    }
+  }
+}
+
+// ---------- Login ---------
+.login-btn {
+  position: absolute;
+  top     : 45px;
+  right   : 10%;
+  width   : 50px;
+  height  : 80px;
+  cursor  : pointer;
+
+  img {
+    width : 45px;
+    height: 45px;
+  }
+
+  h4 {
+    margin: 0;
+    color : $primaryColor;
+  }
+}
+
+
+.login-container {
+  display         : none;
+  position        : fixed;
+  top             : 30%;
+  left            : 50%;
+  z-index         : 300;
+  width           : 380px;
+  height          : 520px;
+  margin          : 100px auto;
+  border-radius   : 10px;
+  background-color: $secondaryColor;
+  text-align      : center;
+  color           : #fff;
+  transform       : translate(-50%, -50%);
+
+  .close {
+    position: absolute;
+    top     : 10px;
+    right   : 10px;
+    width   : 50px;
+    height  : 50px;
+    cursor  : pointer;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h1 {
+    margin    : 0;
+    padding   : 50px 0 0 0;
+    text-align: center;
+  }
+
+  .form-control {
+    position  : relative;
+    text-align: center;
+
+    input {
+      width           : 80%;
+      margin-top      : 25px;
+      padding         : 10px 0;
+      border          : 0;
+      border-bottom   : 3px solid #fff;
+      outline         : none;
+      background-color: transparent;
+      color           : #fff;
+      font-size       : 24px;
+    }
+
+    label {
+      position: absolute;
+      top     : 40px;
+      left    : 10%;
+
+      span {
+        display   : inline-block;
+        transition: .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+    }
+  }
+
+  .form-control input:focus+label span,
+  .form-control input:valid+label span {
+    color    : $primaryColor;
+    transform: translateY(-30px);
+  }
+
+  #login-btn {
+    width        : 80%;
+    height       : 50px;
+    margin-top   : 25px;
+    border       : 0;
+    border-radius: 8px;
+    color        : $primaryColor;
+    font-size    : 20px;
+    font-weight  : 700;
+
+    &:active {
+      transform: scale(.97);
+    }
+  }
+
+  p {
+    margin-top: 50px;
+
+    a {
+      padding        : 20px;
+      text-decoration: none;
+      color          : $primaryColor;
+
+      &:hover {
+        color: $backgroundColor;
+      }
+    }
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+
+  #facebook-btn {
+    @include btn;
+    display         : inline-block;
+    background-color: #4267b2;
+
+    &:hover {
+      background-color: #4267b2;
+    }
+
+    img {
+      vertical-align: middle;
+      width         : 30px;
+      height        : 30px;
+      margin-top    : -5px;
+
+    }
+  }
+
+  #google-btn {
+    @include btn;
+    display         : inline-block;
+    background-color: #fff;
+    color           : #000;
+
+    &:hover {
+      background-color: #fff;
+    }
+
+    img {
+      vertical-align: middle;
+      margin        : -5px 5px 0 0;
+    }
+  }
+}
+
+.mask {
+  display         : none;
+  position        : fixed;
+  top             : 0;
+  left            : 0;
+  z-index         : 200;
+  width           : 100%;
+  height          : 100%;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+// ---------- logo ----------
+header {
+  @at-root .logo-container {
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    width          : 200px;
+    height         : 200px;
+    margin         : $autoMargin;
+    margin-top     : 70px;
+
+    .logo {
+      margin-bottom: -30px;
+
+      a {
+        display  : block;
+        font-size: 0;
+      }
+    }
+
+    h1 {
+      padding-bottom: 5px;
+      color         : $primaryColor;
+      font-size     : 24px;
+
+
+    }
+
+    h5 {
+      margin-top : -15px;
+      color      : $fontColor;
+      font-family: $fontKaushan;
+    }
+
+    img {
+      display: block;
+      width  : 65px;
+      margin : $autoMargin;
+    }
+  }
+}
+
+// ----------Footer ----------
+.footer-container {
+  padding-bottom: 60px;
+}
+
+footer {
+  background-color: #e6e7e0;
+  color           : $fontColor;
+
+  .triangle {
+    @include triangle-reverse;
+    border-color: $backgroundColor transparent transparent transparent;
+  }
+
+  @at-root .footer-top {
+    display        : flex;
+    justify-content: space-between;
+    margin         : 50px 0;
+
+    img {
+      vertical-align: bottom;
+      width         : 45px;
+    }
+
+    span:nth-child(n+2) {
+      display    : inline-block;
+      margin-left: 15px;
+    }
+
+    @at-root .email {
+      position: relative;
+
+      input {
+        position        : absolute;
+        top             : 0;
+        right           : 0;
+        width           : 35vw;
+        height          : 50px;
+        padding-left    : 30px;
+        border          : 1px solid $fontColor;
+        border-radius   : 25px;
+        outline         : 0;
+        background-color: $backgroundColor;
+      }
+
+      button {
+        position        : absolute;
+        top             : 70%;
+        right           : 10px;
+        width           : 100px;
+        height          : 30px;
+        line-height     : 30px;
+        border-radius   : 50px;
+        border          : 0;
+        background-color: $fontColor;
+        color           : #fff;
+        transform       : translateY(-50%);
+        cursor          : pointer;
+
+        &:hover {
+          background-color: $secondaryColor;
+        }
+      }
+    }
+
+
+  }
+
+  @at-root .footer-bottom {
+    display        : flex;
+    justify-content: space-between;
+
+    @mixin media-icon {
+      display   : inline-block;
+      width     : 30px;
+      height    : 25px;
+      background: url(../img/icon/icon-social-media@2x.png) no-repeat;
+
+      &:hover {
+        background-position-y: -48px;
+      }
+    }
+
+    .facebook {
+      @include media-icon;
+      background-position: -14px -6px;
+    }
+
+    .twitter {
+      @include media-icon;
+      background-position: -50px -6px;
+    }
+
+    .google {
+      @include media-icon;
+      background-position: -86px -6px;
+    }
+
+    .pinterest {
+      @include media-icon;
+      background-position: -124px -6px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .wrap {
+    width : 100%;
+    margin: 0;
+  }
+
+  // ---------- Login --------
+  .login-container {
+    width: 300px;
+
+    p {
+      margin-top: 10px;
+
+      a {
+        padding: 10px
+      }
+    }
+
+    #facebook-btn {
+
+      @include btn;
+      display         : inline-block;
+      margin-bottom   : 7px;
+      background-color: #4267b2;
+
+      &:hover {
+        background-color: #4267b2;
+      }
+    }
+
+    #google-btn {
+      @include btn;
+      display         : inline-block;
+      background-color: #fff;
+      color           : #000;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+
+  }
+
+  // ---------- Nav ----------
+  nav {
+
+    ul {
+      margin : 150px 0 0 0;
+      padding: 0;
+
+      li {
+        margin-bottom: 100px;
+
+        a {
+          padding  : 15px;
+          color    : #fff;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  // ----------Footer ----------
+  footer {
+    .triangle {
+      margin-top: -150px;
+    }
+
+    .footer-top {
+      flex-direction: column;
+
+      img {
+        margin-left: 20px;
+      }
+
+      span:nth-child(2) {
+        margin-top : 20px;
+        margin-left: 40px;
+        font-size  : 14px;
+      }
+
+      span:nth-child(3) {
+        @extend span:nth-child(2);
+        margin-left : 110px;
+
+      }
+
+      .email {
+        margin-bottom: 30px;
+
+        input {
+          right: 18px;
+          width: 90%;
+        }
+
+        button {
+          top  : 27px;
+          right: 28px;
+        }
+      }
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      align-items   : center;
+
+      span {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+@media(min-width: 576.1px) and (max-width: 768px) {
+  .wrap {
+    width : 85%;
+    margin: 0 auto;
+  }
+
+  // ---------- Login --------
+  .login-container {
+    width: 300px;
+
+    p {
+      margin-top: 10px;
+
+      a {
+        padding: 10px
+      }
+    }
+
+    #facebook-btn {
+
+      @include btn;
+      display         : inline-block;
+      margin-bottom   : 7px;
+      background-color: #4267b2;
+
+      &:hover {
+        background-color: #4267b2;
+      }
+    }
+
+    #google-btn {
+      @include btn;
+      display         : inline-block;
+      background-color: #fff;
+      color           : #000;
+
+      &:hover {
+        background-color: #fff;
+      }
+    }
+
+  }
+
+  // ---------- Nav ----------
+  nav {
+    ul {
+      margin : 150px 0 0 25px;
+      padding: 0;
+    }
+  }
+
+  // ----------Footer ----------
+  footer {
+    .triangle {
+      margin-top: -150px;
+    }
+
+    .footer-top {
+      flex-direction: column;
+
+      .email {
+        margin-bottom: 30px;
+
+        input {
+          top  : 15px;
+          right: 50px;
+          width: 90%;
+        }
+
+        button {
+          top  : 43px;
+          right: 70px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768.1px) and (max-width: 1024px) {
+  .wrap {
+    width : 90%;
+    margin: 0 auto;
+  }
+
+  // ---------- Nav ----------
+  nav {
+    ul {
+      margin : 150px 0 0 25px;
+      padding: 0;
+    }
+  }
+
+  // ----------Footer ----------
+  footer {
+    .triangle {
+      margin-top: -100px;
+    }
+  }
+}
+
+@media (min-width: 1024.1px) and (max-width: 1200px) {
+  .wrap {
+    width : 90%;
+    margin: 0 auto;
+  }
+
+  // ---------- Nav ----------
+  nav {
+    ul {
+      margin : 150px 0 0 25px;
+      padding: 0;
+    }
+  }
+}

@@ -12,30 +12,33 @@ for (let i = 0; i < btnArray.length; i++) {
     this.classList.add('active')
   })
 }
-// Product filtering -------------------
-const foodArray = document.querySelectorAll('.food')
-const burgerArray = document.querySelectorAll('.burger')
-const sandwichArray = document.querySelectorAll('.sandwich')
-const bundleArray = document.querySelectorAll('.bundle')
+// // Product filtering (MixItUp)-------------------
+const mixer = mixitup('.foods')
 
-all.onclick = function () {
-  foodArray.forEach((food) => (food.style.display = 'block'))
-}
+// // Product filtering -------------------
+// const foodArray = document.querySelectorAll('.food')
+// const burgerArray = document.querySelectorAll('.burger')
+// const sandwichArray = document.querySelectorAll('.sandwich')
+// const bundleArray = document.querySelectorAll('.bundle')
 
-burgers.onclick = function () {
-  foodArray.forEach((food) => (food.style.display = 'block'))
-  sandwichArray.forEach((sandwich) => (sandwich.style.display = 'none'))
-  bundleArray.forEach((bundle) => (bundle.style.display = 'none'))
-}
+// all.onclick = function () {
+//   foodArray.forEach((food) => (food.style.display = 'block'))
+// }
 
-sandwiches.onclick = function () {
-  foodArray.forEach((food) => (food.style.display = 'block'))
-  burgerArray.forEach((burger) => (burger.style.display = 'none'))
-  bundleArray.forEach((bundle) => (bundle.style.display = 'none'))
-}
+// burgers.onclick = function () {
+//   foodArray.forEach((food) => (food.style.display = 'block'))
+//   sandwichArray.forEach((sandwich) => (sandwich.style.display = 'none'))
+//   bundleArray.forEach((bundle) => (bundle.style.display = 'none'))
+// }
 
-bundle.onclick = function () {
-  foodArray.forEach((food) => (food.style.display = 'block'))
-  burgerArray.forEach((burger) => (burger.style.display = 'none'))
-  sandwichArray.forEach((sandwich) => (sandwich.style.display = 'none'))
-}
+// sandwiches.onclick = function () {
+//   foodArray.forEach((food) => (food.style.display = 'block'))
+//   burgerArray.forEach((burger) => (burger.style.display = 'none'))
+//   bundleArray.forEach((bundle) => (bundle.style.display = 'none'))
+// }
+
+// bundle.onclick = function () {
+//   foodArray.forEach((food) => (food.style.display = 'block'))
+//   burgerArray.forEach((burger) => (burger.style.display = 'none'))
+//   sandwichArray.forEach((sandwich) => (sandwich.style.display = 'none'))
+// }

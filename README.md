@@ -2,4 +2,4 @@
 
 Fast Food Restaurant Website
 
-DEMO : https://fuchih.github.io/BurgerWorld/
+[DEMO](https://fuchih.github.io/BurgerWorld/)
